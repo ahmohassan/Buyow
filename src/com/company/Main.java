@@ -1,23 +1,26 @@
 package com.company;
 
-//import static com.sun.tools.javac.main.Option.G;
-
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int numbers ;
-         String go ="1";
-         Scanner myObj = new Scanner(System.in);
          Scanner input = new Scanner(System.in);
-         System.out.println("Input an integer: ");
-     while((numbers=input.nextInt()) != 0) {
-
-         CheckNumeber(numbers);
-         System.out.println("Input an integer: ");
-     }
-        System.out.println("Out of loop");
+         System.out.println("Fadlan geeli number kisi #: ");
+        int  numbers = input.nextInt();
+         while(numbers != 0) {
+            if(numbers<0){
+                System.out.println("Numberka wa inuu ahaadaa mid taban");
+                System.out.println("Fadlan Geli number kisi si aad horay ugu socoto \nHadii kale riix 0 Siadd uga baxdo: ");
+                numbers = input.nextInt();
+            }
+            else{
+                CheckNumeber(numbers);
+                System.out.println("Fadlan Geli number kisi si aad horay ugu socoto \nHadii kale riix 0 Siadd uga baxdo: ");
+                numbers = input.nextInt();
+            }
+         }
+            System.out.println("Macsalaama ): ");
 
     }
 
@@ -27,7 +30,7 @@ public class Main {
         if(number % 2 ==0){
             EvenNumber env = new EvenNumber();
 
-            env.doublyEven(number);
+            System.out.println("Keliya Waxaa laguu ogol yahay number kisi ");
         }
         else{
             GFG g = new GFG();

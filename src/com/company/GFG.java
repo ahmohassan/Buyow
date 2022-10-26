@@ -1,36 +1,38 @@
-package com.company;// Java program to generate odd sized magic squares
-import java.io.*;
+package com.company;
 
 class GFG {
+    // Kani waa funnction ka magic square
     // Function to generate odd sized magic squares
     static void generateSquare(int n)
     {
         int[][] magicSquare = new int[n][n];
 
+        // possion ka I & J ka bilaa banayaan
         // Initialize position for 1
         int i = n / 2;
         int j = n - 1;
 
         // One by one put all values in magic square
         for (int num = 1; num <= n * n;) {
+            // Xeerka sidaxad I = -1 and j== n I=0 and j==n-2
             if (i == -1 && j == n) // 3rd condition
             {
                 j = n - 2;
                 i = 0;
             }
             else {
-                // 1st condition helper if next number
-                // goes to out of square's right side
+                // haddii  J == n
+                // j =0
                 if (j == n)
                     j = 0;
 
-                // 1st condition helper if next number is
-                // goes to out of square's upper side
+                //Haddii  I <0
+                // I== n-1
                 if (i < 0)
                     i = n - 1;
             }
 
-            // 2nd condition
+            // Waa xeerka Haddii  Booska La dagge
             if (magicSquare[i][j] != 0) {
                 j -= 2;
                 i++;
@@ -57,13 +59,6 @@ class GFG {
         }
     }
 
-    // driver program
-//    public static void main(String[] args)
-//    {
-//        // Works only when n is odd
-//        int n = 7;
-//        generateSquare(n);
-//    }
+
 }
 
-// Contributed by Pramod Kumar
